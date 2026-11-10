@@ -5,19 +5,22 @@ module ripple_counter(
 );
 
     t_flipflop stage_one_TFF(
-        .T(clk),
+        .T(1'b1),
+        .clk(clk),
         .reset(reset),
         .Q(stage1)
     );
 
     t_flipflop stage_two_TFF(
-        .T(stage1),
+        .T(1'b1),
+        .clk(stage1),
         .reset(reset),
         .Q(stage2)
     );
 
     t_flipflop stage_three_TFF(
-        .T(stage2),
+        .T(1'b1),
+        .clk(stage2),
         .reset(reset),
         .Q(stage3)
     );
